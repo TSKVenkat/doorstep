@@ -1,12 +1,12 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Doto:wght@100..900&family=Geist+Mono:wght@100..900&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
   margin: 0;
   scroll-behavior: smooth;
+}
+
+html {
+  font-size: 10px;
 }
 
 .wrapper {
@@ -14,22 +14,26 @@
   max-width: 1536px;
   margin-inline: auto;
   position: relative;
-  top: 100px;
+  top: 160px;
   height: 100px;
   margin-top: 5rem;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 1) 20%,
-    rgba(0, 0, 0, 1) 80%,
-    rgba(0, 0, 0, 0)
-  );
+  mask-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0));
 }
 
 @keyframes scrollLeft {
   to {
     left: -200px;
+  }
+}
+
+@keyframes scrollRight {
+  to {
+    right: -200px;
   }
 }
 
@@ -46,8 +50,205 @@
   animation-iteration-count: infinite;
 }
 
+.item-right {
+  width: 200px;
+  height: 100px;
+  background-color: rgb(0, 81, 151);
+  border-radius: 6px;
+  position: absolute;
+  right: max(calc(200px * 8), 100%);
+  animation-name: scrollRight;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.tagline {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  top: 170px;
+  font-family: "Bowlby One", sans-serif;
+  font-weight: 600;
+  font-size: 10rem;
+  color: #EAB716;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.feature-1 {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  font-family: "Bowlby One", sans-serif;
+  font-weight: 600;
+  font-size: 10rem;
+  color: #EAB716;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  align-self: center;
+  justify-content: space-around;
+  line-height: 1;
+}
+
+.feature-2 {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  font-family: "Bowlby One", sans-serif;
+  font-weight: 600;
+  font-size: 10rem;
+  color: #EAB716;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-self: center;
+  justify-content: space-around;
+  line-height: 1;
+}
+
+.Home-para1 {
+  opacity: 0;
+  transform: translateX(100px);
+  width: 40%;
+  font-family: 'Host Grotesk', sans-serif;
+  color: #005197;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: justify;
+  align-self: center;
+  animation: slide 5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.feature-para2 {
+  opacity: 0;
+  transform: translateX(100px);
+  width: 40%;
+  font-family: 'Host Grotesk', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: justify;
+  align-self: center;
+  animation: slide 5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.feature-para1 {
+  opacity: 0;
+  transform: translateX(-100px);
+  width: 40%;
+  font-family: 'Host Grotesk', sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: justify;
+  align-self: center;
+  line-height: normal;
+  animation: slide 5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes slide {
+  to {
+    opacity: 1;
+    transform: translateX(50px);
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  top: 350px;
+  width: 100%;
+  height: 2500px;
+  background-color: #005197;
+}
+
+.tag1 {
+  width: fit-content;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation-name: appear;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.tag2 {
+  width: fit-content;
+  transform: translateY(-80px);
+  opacity: 0;
+  animation-name: appear;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.tag3 {
+  width: fit-content;
+  transform: translateY(-250px);
+  opacity: 0;
+  animation-name: appear;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.tag1:hover,
+.tag2:hover,
+.tag3:hover {
+  opacity: 1;
+  background-image: linear-gradient(to bottom, #ff6600, #FF8C06, transparent);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-background-clip: linear-gradient(to bottom, #ff6600, #FF8C06, transparent);
+  transition: all 1.5s;
+}
+
+@keyframes appear {
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.item p {
+  margin: 10px;
+  font-family: 'Host Grotesk', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+.item-right p {
+  margin: 10px;
+  font-family: 'Host Grotesk', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
 .item1 {
   animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item:hover {
+  background-image: linear-gradient(45deg, #ff6600, #FF8C06, rgb(255, 183, 0), rgb(255, 183, 0));
+  transition: 0.5s;
+  transform: scale(1.01);
+  color: rgb(0, 81, 151);
+}
+
+.item-right:hover {
+  background-image: linear-gradient(45deg, #ff6600, #FF8C06, rgb(255, 183, 0), rgb(255, 183, 0));
+  transition: 0.5s;
+  transform: scale(1.01);
+  color: rgb(0, 81, 151);
 }
 
 .item2 {
@@ -76,4 +277,311 @@
 
 .item8 {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+.spline-div {
+  width: 100%;
+  height: 100%;
+}
+
+.Footer {
+  width: 100%;
+  height: 300px;
+  background-color: transparent;
+  border-top: 5px solid rgb(255, 183, 0);
+  position: absolute;
+  top: 2000px;
+  display: flex;
+  justify-content: center;
+}
+
+.Footer-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.Footer-Section {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  /* Ensures equal width for each section */
+}
+
+
+.Footer-Section h3 {
+  font-family: "Geist Mono", sans-serif;
+  font-weight: bold;
+  color: rgb(0, 81, 151);
+  /* Removes extra margin on headings */
+  /* Removes extra padding on headings */
+  font-size: 2.5rem;
+  /* Adjust heading size as needed */
+  text-transform: uppercase;
+}
+
+.Footer-Section ul {
+  font-family: "Host Grotesk", sans-serif;
+  font-size: 1.8rem;
+  font-weight: light;
+  color: rgb(0, 81, 151);
+  list-style: none;
+  /* Removes default bullet points */
+  padding: 0;
+  /* Removes padding */
+  margin-top: 5px;
+}
+
+.Footer-Section li {
+  margin: 5px 0;
+  /* Adds space between each list item */
+}
+
+.Footer-Section a {
+  text-decoration: none;
+  color: rgb(0, 81, 151);
+  /* Adds space between each list item */
+}
+
+.Footer-Section a:hover {
+  color: #EAB716;
+}
+
+#Footer-About {
+  position: relative;
+  bottom: 20px;
+}
+
+#Footer-Portal {
+  position: relative;
+  bottom: 35px;
+}
+
+#Footer-Policy {
+  position: relative;
+  bottom: 5px;
+}
+
+#Footer-Help {
+  position: relative;
+  bottom: 20px;
+}
+
+/* Container */
+.marquee-container {
+  width: 320px; /* Adjust width as needed */
+  height: 600px; /* Increased container height */
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent); /* Improved masking */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+/* Marquee Animation */
+.marquee-1 {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 15s linear infinite; /* Smooth, slower animation */
+}
+
+.marquee-3 {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 18s linear infinite; /* Smooth, slower animation */
+}
+
+.marquee-2 {
+  display: flex;
+  flex-direction: column;
+  animation: scroll 12s linear infinite; /* Smooth, slower animation */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-100% + 600px)); /* Seamless loop, matches container height */
+  }
+}
+
+@keyframes scroll-opp {
+  0% {
+    transform: translateY(calc(-100% + 600px));
+  }
+  100% {
+    transform: translateY(0px); /* Seamless loop, matches container height */
+  }
+}
+
+/* Marquee Items */
+.marquee-item {
+  width: 95%; /* Slightly smaller than container for breathing space */
+  height: 160px; /* Adjusted height (close to 9:16 but flexible) */
+  background-color: rgba(0, 81, 151, 0.597); /* Example color */
+  margin: 10px auto; /* Center items vertically with spacing */
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.marquee-item:hover {
+  transform: scale(0.8); /* Shrinks on hover */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.408); /* Slight shadow for hover */
+}
+
+/* Horizontal Container */
+.marquee-container.horizontal {
+  width: 90%; /* Full width */
+  height: 540px; /* Ensures the container's height follows 16:9 aspect ratio */
+  overflow: hidden;
+  position: relative;
+  align-self: center;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Smooth masking */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Horizontal Marquee */
+.marquee.horizontal {
+  display: flex;
+  flex-direction: row;
+  animation: scroll-horizontal 25s linear infinite; /* Smooth scrolling */
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0); /* Start at the beginning */
+  }
+  100% {
+    transform: translateX(-50%); /* Loop halfway for seamless scrolling */
+  }
+}
+
+/* Horizontal Items */
+.marquee-item.horizontal {
+  width: calc(100vw / 6); /* 6 items visible at a time, adjusts with screen width */
+  height: calc((100vw / 6) * 9 / 16); /* Maintains 16:9 aspect ratio for items */
+  background-color: rgba(0, 81, 151, 0.597); /* Example background */
+  margin: 0 10px; /* Horizontal spacing */
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Horizontal */
+.marquee-item.horizontal:hover {
+  transform: scale(0.85); /* Shrink smoothly to 85% size */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.408); /* Hover shadow effect */
+}
+
+.Products-text {
+  font-family: "Host Grotesk",sans-serif;
+  font-size: 2rem;
+  line-height: normal;
+  width: 90%;
+  align-self: center;
+  text-align: justify;
+  color: rgb(0, 81, 151);
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.carousel {
+  position: relative;
+  width: 1296px;
+  height: 500px;
+  align-self: center;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carousel:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%; /* Ensure images fill the new height */
+  object-fit: cover; /* Maintain aspect ratio, crop as needed */
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.carousel-slide img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: background 0.3s, opacity 0.3s;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.carousel-dots .dot:hover {
+  transform: scale(1.2);
+}
+
+.carousel-dots .dot.active {
+  background-color: #ff6f61;
 }
